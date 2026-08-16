@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoltGo | EV Charging</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <div class="logo">⚡ VoltGo</div>
+
+      <div class="nav-links">
+        <a href="#stations"> Find Chargers </a>
+        <a href="#booking"> Book </a>
+        <a href="#bookings"> My Bookings </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="tag">SMART EV CHARGING</p>
+
+        <h1>
+          Charge up.<br />
+          Keep moving.
+        </h1>
+
+        <p>Find available EV charging stations, compare them and reserve yourslot without the waiting.</p>
+
+        <a href="#stations" class="hero-btn"> Find a Charger ⚡ </a>
+      </div>
+          <div class="battery-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats">
+      <div class="stat">
+        <h2 id="stationCount">4</h2>
+        <p>Charging Stations</p>
+      </div>
+
+      <div class="stat">
+        <h2 id="slotCount">12</h2>
+        <p>Available Slots</p>
+      </div>
+
+      <div class="stat">
+        <h2 id="bookingCount">0</h2>
+
+        <p>My Bookings</p>
+      </div>
+    </section>
+
+    <!-- STATIONS -->
+
+    <section id="stations">
+      <div class="section-heading">
+        <p class="tag">EXPLORE</p>
+
+        <h2>Find Your Charger</h2>
+
+        <p>Choose a station that fits your journey.</p>
+      </div>
+
+      <!-- SEARCH -->
+
+      <div class="search-area">
+        <input
+          type="text"
+          id="search"
+          placeholder="🔍 Search station or location..."
+        />
+
+        <select id="typeFilter">
+          <option value="All">All Charging Types</option>
+
+          <option value="DC Fast">DC Fast</option>
+
+          <option value="AC">AC</option>
+        </select>
+
+        <select id="availabilityFilter">
+          <option value="All">All Stations</option>
+
+          <option value="Available">Available</option>
+
+          <option value="Full">Full</option>
+        </select>
+
+        <button onclick="filterStations()">Search</button>
+      </div>
+
+      <!-- QUICK FILTERS -->
+
+      <div class="quick-filters">
+        <button onclick="showAvailable()">🟢 Available Now</button>
+
+        <button onclick="showFast()">⚡ Fast Charging</button>
+
+        <button onclick="showAll()">Show All</button>
+      </div>
+
+      <!-- STATION CARDS -->
+
+      <div id="stationList" class="station-grid"></div>
+    </section>
+
+    <!-- STATION DETAILS -->
+
+    <section class="details-section">
+      <div id="stationDetails">
+        <div class="empty-details">
+          <span>⚡</span>
+
+          <h3>Select a charging station</h3>
+
+          <p>Click "View Station" to see complete station information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+
+    <section id="booking" class="booking-section">
+      <div class="section-heading">
+        <p class="tag">RESERVE</p>
+
+        <h2>Book Your Charging Slot</h2>
+
+        <p>Plan your charging stop before you hit the road.</p>
+      </div>
+
+      <form id="bookingForm">
+        <div class="selected-station">
+          <span> SELECTED STATION </span>
+
+          <strong id="selectedStation"> No station selected </strong>
+
+          <input type="hidden" id="selectedStationId" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label> Your Name </label>
+
+            <input type="text" id="name" placeholder="Enter your name" />
+          </div>
+
+          <div class="form-group">
+            <label> Phone Number </label>
+            <input
+              type="text"
+              id="phone"
+              placeholder="10 digit number"
+              maxlength="10"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label> Date </label>
+
+            <input type="date" id="date" />
+          </div>
+
+          <div class="form-group">
+            <label> Time </label>
+
+            <input type="time" id="time" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label> Vehicle Number </label>
+
+            <input type="text" id="vehicleNumber" placeholder="KA19AB1234" />
+          </div>
+
+          <div class="form-group">
+            <label> Vehicle Type </label>
+
+            <select id="vehicleType">
+              <option value="">Select vehicle</option>
+
+              <option>Electric Car</option>
+              <option>Electric Bike</option>
+              <option>Electric Scooter</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- COST CALCULATOR -->
+
+        <div class="cost-box">
+          <div>
+            <p>ESTIMATED CHARGING COST</p>
+
+            <small> DC Fast Charging — ₹18/kWh </small>
+          </div>
+
+          <div class="cost-calculator">
+            <input
+              type="number"
+              id="units"
+              placeholder="Energy in kWh"
+              oninput="calculateCost()"
+            />
+
+            <strong id="cost"> ₹0 </strong>
+          </div>
+        </div>
+
+        <button type="submit" class="book-btn">Confirm Booking ⚡</button>
+      </form>
+    </section>
+
+    <!-- BOOKINGS -->
+
+    <section id="bookings">
+      <div class="section-heading">
+        <p class="tag">YOUR JOURNEY</p>
+
+        <h2>My Bookings</h2>
+
+        <p>Manage your upcoming charging sessions.</p>
+      </div>
+
+      <div id="bookingList" class="booking-grid"></div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <h2>⚡ VoltGo</h2>
+
+      <p>Charge smart. Drive further.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
