@@ -102,24 +102,23 @@ Screenshots of successful API requests and responses are included in the `screen
 
 ## 📸 Screenshots
 
-### Homepage
+### 📸 Screenshots
 
-screenshots\homepage.png
+#### Homepage
+![Homepage](screenshots/homepage.png)
 
-### Charging Stations
-screenshots/stations.png
+#### Charging Stations
+![Charging Stations](screenshots/stations.png)
 
-### Booking
-screenshots\Booking.png
+#### Booking
+![Booking](screenshots/Booking.png)
 
-### API Testing
-screenshots\api testing.png
-screenshots\api testing (1).png
-screenshots\api testing (2).png
-screenshots\api testing (3).png
-screenshots\api testing (4).png
-screenshots\api testing (5).png
-screenshots\api testing (6).png
+#### API Testing
+![API Testing 1](screenshots/api%20testing.png)
+![API Testing 2](<screenshots/api testing (1).png>)
+![API Testing 3](<screenshots/api testing (4).png>)
+![API Testing 4](<screenshots/api testing (5).png>)
+![API Testing 5](<screenshots/api testing (6).png>)
 
 ## Future Improvements
 
