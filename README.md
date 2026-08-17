@@ -84,15 +84,6 @@ The server will run on the port specified in `server.js`.
 
 Open `index.html` using Live Server in VS Code, or use the frontend setup specified by the project.
 
-## API Endpoints
-
-| Method | Endpoint   | Purpose       |
-| ------ | ---------- | ------------- |
-| GET    | `/api/...` | Retrieve data |
-| POST   | `/api/...` | Add data      |
-| PUT    | `/api/...` | Update data   |
-| DELETE | `/api/...` | Delete data   |
-
 
 ## 🧪 API Testing
 
@@ -104,22 +95,23 @@ Screenshots of successful API requests and responses are included in the `screen
 
 ### 📸 Screenshots
 
+### 📸 Screenshots
+
 #### Homepage
-![Homepage](screenshots/homepage.png)
+![Homepage](homepage.png)
 
 #### Charging Stations
-![Charging Stations](screenshots/stations.png)
+![Charging Stations](stations.png)
 
 #### Booking
-![Booking](screenshots/Booking.png)
+![Booking](Booking.png)
 
 #### API Testing
-![API Testing 1](screenshots/api%20testing.png)
-![API Testing 2](<screenshots/api testing (1).png>)
-![API Testing 3](<screenshots/api testing (4).png>)
-![API Testing 4](<screenshots/api testing (5).png>)
-![API Testing 5](<screenshots/api testing (6).png>)
-
+![API Testing 1](<api testing.png>)
+![API Testing 2](<api testing (1).png>)
+![API Testing 3](<api testing (4).png>)
+![API Testing 4](<api testing (5).png>)
+![API Testing 5](<api testing (6).png>)
 ## Future Improvements
 
 * Real-time charging station availability
